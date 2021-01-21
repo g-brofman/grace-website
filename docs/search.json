@@ -1,0 +1,20 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About this site",
+      "description": "Some additional details about the website",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2021-01-21T11:43:54-08:00"
+    },
+    {
+      "path": "index.html",
+      "title": "Grace!",
+      "author": [],
+      "contents": "\n\n          \n          \n          Grace Brofman\n          \n          \n          Home\n          About\n          Grace\n          ☰\n          \n          \n      \n        \n          \n            Grace!\n          \n          \n            \n              Blah blah blah text.\n            \n            \n              Blah blah blah text.\n            \n          \n\n          \n            \n              \n                  \n                    \n                      LinkedIn\n                    \n                  \n                \n                                \n                  \n                    \n                      Twitter\n                    \n                  \n                \n                                \n                  \n                    \n                      GitHub\n                    \n                  \n                \n                                \n                  \n                    \n                      Email\n                    \n                  \n                \n                              \n          \n\n          \n            \n              \n                                \n                  \n                    LinkedIn\n                  \n                \n                                \n                  \n                    Twitter\n                  \n                \n                                \n                  \n                    GitHub\n                  \n                \n                                \n                  \n                    Email\n                  \n                \n                              \n            \n          \n        \n      \n    \n\n    \n    \n    ",
+      "last_modified": "2021-01-21T11:43:54-08:00"
+    }
+  ],
+  "collections": []
+}

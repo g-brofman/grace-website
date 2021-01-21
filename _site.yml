@@ -1,0 +1,14 @@
+name: "."
+title: "Grace Brofman"
+description: |
+  Grace Brofman
+output_dir: "docs"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+    - text: "Grace"
+      href: grace.html
+output: distill::distill_article
