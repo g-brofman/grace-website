@@ -1,20 +1,35 @@
 {
   "articles": [
     {
-      "path": "about.html",
-      "title": "About this site",
-      "description": "Some additional details about the website",
+      "path": "about_me.html",
+      "title": "About me",
+      "description": "This and that about me",
+      "author": [],
+      "contents": "\nHere are some INCREDIBLE things about me:\nI’m right-handed (and right-footed)\n(add more later)\n(add more later)\nEmail me if YOU have any incredible things about me that you’d like to see posted!\n\n\n\n",
+      "last_modified": "2021-01-24T13:55:12-08:00"
+    },
+    {
+      "path": "blog.html",
+      "title": "Blog",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-01-21T11:43:54-08:00"
+      "last_modified": "2021-01-24T13:55:13-08:00"
     },
     {
       "path": "index.html",
       "title": "Grace!",
       "author": [],
-      "contents": "\n\n          \n          \n          Grace Brofman\n          \n          \n          Home\n          About\n          Grace\n          ☰\n          \n          \n      \n        \n          \n            Grace!\n          \n          \n            \n              Blah blah blah text.\n            \n            \n              Blah blah blah text.\n            \n          \n\n          \n            \n              \n                  \n                    \n                      LinkedIn\n                    \n                  \n                \n                                \n                  \n                    \n                      Twitter\n                    \n                  \n                \n                                \n                  \n                    \n                      GitHub\n                    \n                  \n                \n                                \n                  \n                    \n                      Email\n                    \n                  \n                \n                              \n          \n\n          \n            \n              \n                                \n                  \n                    LinkedIn\n                  \n                \n                                \n                  \n                    Twitter\n                  \n                \n                                \n                  \n                    GitHub\n                  \n                \n                                \n                  \n                    Email\n                  \n                \n                              \n            \n          \n        \n      \n    \n\n    \n    \n    ",
-      "last_modified": "2021-01-21T11:43:54-08:00"
+      "contents": "\n\n          \n          \n          Grace Brofman\n          \n          \n          Home\n          Projects\n          About\n          Blog\n          ☰\n          \n          \n      \n        \n          \n            \n              \n            \n              Grace!\n            \n            \n              \n                \n                    \n                      \n                        LinkedIn\n                      \n                    \n                  \n                                    \n                    \n                      \n                        GitHub\n                      \n                    \n                  \n                                    \n                    \n                      \n                        Email\n                      \n                    \n                  \n                                    \n                    \n                      \n                        Blog\n                      \n                    \n                  \n                                  \n            \n          \n        \n        \n        \n          \n            Welcome to my website! Explore with care.\n            <- That’s me (Grace), being pretty chill.\n          \n        \n      \n    \n\n    \n      \n        \n          \n            \n              \n            \n              Grace!\n            \n            \n              \n                \n                                    \n                    \n                      LinkedIn\n                    \n                  \n                                    \n                    \n                      GitHub\n                    \n                  \n                                    \n                    \n                      Email\n                    \n                  \n                                    \n                    \n                      Blog\n                    \n                  \n                                  \n              \n            \n            \n              Welcome to my website! Explore with care.\n              <- That’s me (Grace), being pretty chill.\n            \n        \n      \n    \n\n    \n    \n    ",
+      "last_modified": "2021-01-24T13:56:28-08:00"
+    },
+    {
+      "path": "projects.html",
+      "title": "Projects",
+      "description": "Some projects that I've done",
+      "author": [],
+      "contents": "\nSome projects I’m currently working on include:\nA knitted hat for my mother\nA jello mold incorporating imitation crab, miso, and seaweed\nA pinata of undetermined form, to be embellished with rhinestones\n\n\n\n",
+      "last_modified": "2021-01-24T13:55:16-08:00"
     }
   ],
-  "collections": []
+  "collections": ["posts/posts.json"]
 }

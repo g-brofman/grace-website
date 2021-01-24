@@ -1,18 +1,21 @@
 ---
 title: "Grace!"
-image: "flower.jpg"
+image: "graceb.jpg"
 links:
   - label: LinkedIn
-    url: "https://linkedin.com/"
-  - label: Twitter
-    url: "https://twitter.com/"
+    url: "https://www.linkedin.com/in/grace-brofman-819435b2/"
   - label: GitHub
-    url: "https://github.com/"
+    url: "https://github.com/g-brofman"
   - label: Email
-    url: "mailto:email@email.com"
+    url: "mailto:gracebrofman@bren.ucsb.edu"
+  - label: Blog
+    url: "https://en.wikipedia.org/wiki/Blog"
 output:
-  postcards::jolla
+  postcards::trestles
 site: distill::distill_website 
+
 ---
  
-Blah blah blah text.
+Welcome to my website! Explore with care.
+
+<- That's me (Grace), being pretty chill.

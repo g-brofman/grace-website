@@ -1,0 +1,15 @@
+---
+title: "Projects"
+description: |
+  Some projects that I've done
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Some projects I'm currently working on include:
+
+- A knitted hat for my mother
+- A jello mold incorporating imitation crab, miso, and seaweed
+- A pinata of undetermined form, to be embellished with rhinestones

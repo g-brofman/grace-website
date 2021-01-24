@@ -1,0 +1,19 @@
+[
+  {
+    "path": "posts/2021-01-24-welcome/",
+    "title": "welcome to where you'd expect my blog to be.",
+    "description": "A short description of the post. This is for the blog I'll never have!",
+    "author": [
+      {
+        "name": "Grace Brofman",
+        "url": {}
+      }
+    ],
+    "date": "2021-01-24",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-01-24T13:40:14-08:00",
+    "input_file": {}
+  }
+]

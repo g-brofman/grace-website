@@ -1,0 +1,17 @@
+---
+title: "About me"
+description: |
+  This and that about me
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Here are some INCREDIBLE things about me:
+
+- I'm right-handed (and right-footed)
+- (add more later)
+- (add more later)
+- Email me if YOU have any incredible things about me that you'd like to see posted!
+ 

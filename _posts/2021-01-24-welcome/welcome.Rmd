@@ -1,0 +1,22 @@
+---
+title: "welcome to where you'd expect my blog to be."
+description: |
+  A short description of the post. This is for the blog I'll never have!
+author:
+  - name: Grace Brofman
+date: 01-24-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
