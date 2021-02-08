@@ -13,5 +13,7 @@ navbar:
       href: about_me.html
     - text: "Blog"
       href: blog.html
+    - text: "Resume"
+      href: resume.html
 output: distill::distill_article
 theme: postcards.css

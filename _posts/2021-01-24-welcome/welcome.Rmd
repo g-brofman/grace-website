@@ -1,5 +1,5 @@
 ---
-title: "welcome to where you'd expect my blog to be."
+title: "Welcome to where you'd expect my blog to be."
 description: |
   "Have you seen [this](https://laughingsquid.com/miniature-worlds-made-for-snails/)?"
 author:
@@ -18,5 +18,6 @@ knitr::opts_chunk$set(echo = FALSE)
 Distill is a publication format for scientific and technical writing, native to the web.
 
 Learn more about using Distill at <https://rstudio.github.io/distill>.
+
 
 
