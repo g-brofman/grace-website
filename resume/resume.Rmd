@@ -46,7 +46,7 @@ tribble(
 ```{r}
 tribble(~ Position, ~ Year, ~ Company, ~ Where,
         "Bren School", "2020", "Groundwater Researcher", "Santa Barbara, CA",
-        "American Rivers", "2020", "Water Resources Contractor", "Remote"
+        "American Rivers", "2020", "Water Resources Contractor", "remote",
         
         ) %>% 
   detailed_entries(Position, Year, Where, Company)
