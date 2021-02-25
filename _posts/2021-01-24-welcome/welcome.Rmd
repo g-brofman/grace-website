@@ -1,7 +1,8 @@
 ---
 title: "Welcome to where you'd expect my blog to be."
-description: |
-  "Have you seen [this](https://laughingsquid.com/miniature-worlds-made-for-snails/)?"
+description: | 
+    "blog description"
+  
 author:
   - name: Grace Brofman
 date: 01-24-2021
@@ -14,6 +15,17 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+
+### **Blogs I would write if I wrote blogs**
+
+Blog post #1: Have you seen [this](https://laughingsquid.com/miniature-worlds-made-for-snails/)?
+
+
+Blog post #2: How about [this?](https://unsnackable.substack.com/)
+
+
+
+
 
 Distill is a publication format for scientific and technical writing, native to the web.
 

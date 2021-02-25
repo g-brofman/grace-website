@@ -1,8 +1,8 @@
 [
   {
     "path": "posts/2021-01-24-welcome/",
-    "title": "welcome to where you'd expect my blog to be.",
-    "description": "\"Have you seen [this](https://laughingsquid.com/miniature-worlds-made-for-snails/)?\"",
+    "title": "Welcome to where you'd expect my blog to be.",
+    "description": "\"blog description\"",
     "author": [
       {
         "name": "Grace Brofman",
@@ -11,9 +11,9 @@
     ],
     "date": "2021-01-24",
     "categories": [],
-    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "contents": "\nBlogs I would write if I wrote blogs\nBlog post #1: Have you seen this?\nBlog post #2: How about this?\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-02-08T06:50:25-08:00",
+    "last_modified": "2021-02-24T19:49:35-08:00",
     "input_file": {}
   }
 ]
