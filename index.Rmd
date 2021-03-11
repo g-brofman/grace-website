@@ -8,8 +8,6 @@ links:
     url: "https://github.com/g-brofman"
   - label: Email
     url: "mailto:gracebrofman@bren.ucsb.edu"
-  - label: Blog
-    url: "https://en.wikipedia.org/wiki/Blog"
 output:
   postcards::trestles
 site: distill::distill_website 

@@ -1,0 +1,180 @@
+---
+title: "Text wrangling and analysis"
+description: |
+  Word clouds and sentiment analysis for a silly youth magazine.
+author:
+  - name: Grace Brofman
+    url: {}
+date: 03-07-2021
+output:
+  distill::distill_article:
+    self_contained: false
+    code_folding: Code
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+```{r, include = FALSE, warning = FALSE, message = FALSE}
+library(tidyverse)
+library(tidytext)
+library(textdata)
+library(pdftools)
+library(ggwordcloud)
+library(patchwork)
+```
+### **Introduction:**
+For this task I used an unsavory and perhaps sexist magazine I found on the [(Internet Archive)](https://archive.org/details/texts). I chose to perform a sentiment analysis on the 2009 edition of **[(Just for Girls and Guys Youth Magazine)](https://archive.org/details/j4g09/page/n15/mode/2up)** by the Human Life Alliance. The first half (pages 1-8) is "just for girls", while the second half (pages 9-16) is "just for boys". The two halves are meant to give each side insight into the other gender. I wanted to see how the sentiments differed (if at all) between the "girls'" side and the "boys'" side.
+```{r, include = FALSE, warning = FALSE, message = FALSE}
+# upload text 
+mag_text <- pdf_text("Just for Girls and Guys.pdf")
+
+# tidy text
+mag_tidy <- data.frame(mag_text) %>% 
+  mutate(text_full = str_split(mag_text, pattern = "page_break")) %>%   # breaks at "page_break"
+  unnest(text_full) %>% 
+  mutate(text_full = str_trim(text_full)) # trims excess whitespace
+
+mag_df <- mag_tidy %>% 
+  mutate(page = case_when(
+    str_detect(text_full, pattern = "Beginning page") ~ text_full,
+    TRUE ~ NA_character_
+  )) %>% 
+  fill(page) %>% 
+  separate(col = page, into = c("pg", "no"), sep = "page ") %>% 
+  mutate(page = as.numeric(as.character(no))) # changing page number from character to numberic in new column
+
+```
+
+```{r, include = FALSE, warning = FALSE, message = FALSE}
+# convert to tokens using unnest_tokens()
+
+mag_tokens <- mag_df %>% 
+  unnest_tokens(word, text_full) %>% 
+  dplyr::select(-mag_text) %>% 
+  filter(!word == "100") %>% 
+  filter(!word == "10") %>% 
+  filter(!word == "9") %>% 
+  filter(!word == "8") %>% 
+  filter(!word == "7") %>% 
+  filter(!word == "6") %>% 
+  filter(!word == "5") %>% 
+  filter(!word == "4") %>% 
+  filter(!word == "3") %>% 
+  filter(!word == "2") %>% 
+  filter(!word == "1")  %>% 
+  filter(!word == "16") %>% 
+  filter(!word == "2010") %>% 
+  filter(!word == "2011") %>%
+  filter(!word == "25")
+  
+
+# word count by page:
+mag_wordcount <- mag_tokens %>% 
+  count(page, word)
+
+# remove stop words from mag_tokens
+mag_nonstop_words <- mag_tokens %>% 
+  anti_join(stop_words)
+
+nonstop_counts <- mag_nonstop_words %>% 
+  count(page, word)
+
+nonstop_counts
+
+# top 5 words by page
+top_5_words <- nonstop_counts %>% 
+  group_by(page) %>% 
+  arrange(-n) %>% 
+  slice(1:5)
+
+ggplot(data = top_5_words,
+       aes(x = word, y = n)) +
+  geom_col(fill = "blue") +
+  facet_wrap(~page, scales = "free") +
+  coord_flip()
+
+
+```
+
+### **Part 1:** Word count visualization
+
+```{r, warning = FALSE, message = FALSE}
+# girl-focused pages are 1-8. boy-focused pages are 9-16.
+girl_top_50 <- nonstop_counts %>% 
+  filter(page == c(1:8)) %>% 
+  arrange(-n) %>% 
+  slice(1:50)
+
+boy_top_50 <- nonstop_counts %>% 
+  filter(page == c(9:16)) %>% 
+  arrange(-n) %>% 
+  slice(1:50)
+
+girl_cloud <- ggplot(data = girl_top_50,
+                     aes(label = word)) +
+  geom_text_wordcloud(aes(color = n, size = n)) +
+  scale_size_area(max_size = 8) +
+  labs(title = "50 most common words in Just for Girls") 
+
+
+boy_cloud <- ggplot(data = boy_top_50,
+                     aes(label = word)) +
+  geom_text_wordcloud(aes(color = n, size = n)) +
+  scale_size_area(max_size = 8) +
+  labs(title = "50 most common words in Just for Boys") 
+
+
+
+
+```
+
+```{r}
+girl_cloud
+
+```
+
+**Figure 1:** Word cloud for the 50 most common words in "Just for Girls", pages 1-8. Word size is representative of frequency.
+
+```{r}
+boy_cloud
+```
+
+**Figure 2:** Word cloud for the 50 most common words in "Just for Boys", pages 9-16. Word size is representative of frequency.
+
+### **Part 2:** Sentiment analysis
+```{r, warning = FALSE, message = FALSE}
+# sentiment analysis using AFINN lexicon 
+mag_afinn <- mag_nonstop_words %>%  # finding common words beteen mag_nonstop_words and afinn lexicon
+  inner_join(get_sentiments("afinn"))
+
+# for each page, how many times does each sentiment score show up?
+afinn_counts <- mag_afinn %>% 
+  count(page, value)
+
+afinn_means <- mag_afinn %>% 
+  group_by(page) %>% 
+  summarize(mean_afinn = mean(value))
+
+plot_2 <- ggplot(data = afinn_means,
+       aes(x = page,
+           y = mean_afinn)) +
+  geom_col(aes(fill = mean_afinn)) +
+  scale_fill_gradient(low = "deeppink",
+  high = "dodgerblue2") +
+  geom_vline(xintercept = 8, linetype = "dashed", color = "darkgray") +
+  labs(x = "Page number", y = "Score", title = "Mean AFINN score per page", fill = "Score range") +
+  coord_flip() +
+  theme_minimal()
+
+plot_2
+
+# girl-targeted pages are 1-8, boy-targeted pages are 9-16. it seems that in general, the boy-targeted pages are associated with a higher positivity than the girl-targeted pages
+```
+
+**Figure 3:** Sentiment analysis of Just for Girls and Boys Youth Magazine using the AFINN lexicon. Pages 1-8 are "Just for Girls" while pages 9-16 are "Just for Boys". 
+
+
+### **References**
+**Human Life Alliance**. "Just for Girl and Guys Youth Magazine." 2009: https://archive.org/details/j4g09/mode/2up

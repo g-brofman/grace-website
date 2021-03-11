@@ -1,0 +1,116 @@
+---
+title: "Working with raster data"
+description: |
+  Visualizing marine species richness in California
+author:
+  - name: Grace Brofman
+    url: {}
+date: 03-07-2021
+output:
+  distill::distill_article:
+    self_contained: false
+    code_folding: Code
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, include = FALSE)
+```
+
+### **Introduction:**
+Aquamaps is a map-based tool which provides data and visualizations for the world's marine species. Here, cetacean data for a portion of California is used to visualize marine species richness. 
+
+```{r, warning = FALSE, message = FALSE}
+library(raster) # load this before tidyverse
+library(tidyverse)
+library(here)
+library(sf)
+library(fasterize)
+library(rnaturalearth)
+library(RColorBrewer)
+```
+
+```{r, warning = FALSE, message = FALSE}
+# load and instpect the data
+my_files <- list.files(path = "ca_cetaceans", full.names = TRUE)
+
+tif_stack <- raster::stack(my_files)
+tif_stack
+
+plot(tif_stack)
+
+
+```
+
+```{r, warning = FALSE, message = FALSE}
+
+
+# CA shapefile
+
+state <- read_sf("ca_state_border",
+                    layer = "CA_State_TIGER2016")
+
+#check projection
+st_crs(state) # WGS 84 / 3857
+
+# projections differ, so transform one CRS to the other:
+state <- st_transform(state, st_crs(tif_stack))
+
+st_crs(state) # 9122
+```
+
+
+```{r, warning = FALSE, message = FALSE}
+# setting threshold?
+
+threshold_function <- function(x, thresh = .75) {
+  y <- ifelse(x >= thresh, 1, NA)
+  return(y)
+}
+
+species_thresh <- calc(tif_stack, fun = threshold_function)
+
+# adding species richness in each raster
+
+species_richness <- raster::calc(species_thresh, fun = sum, na.rm = TRUE)
+plot(species_richness)
+
+# mask species_richness with coastline data -> also unnecessary?
+#mask(species_richness, coastline110) %>% 
+#  plot()
+
+# then convert to a dataframe
+
+richness_df <- raster::rasterToPoints(species_richness) %>% 
+  as.data.frame()
+
+richness_df[richness_df == 0] <- NA # replacing zero values with NA so that it doesn't show up when plotted
+```
+
+```{r, warning = FALSE, include = TRUE, fig.cap = "**Figure 1.** Map of species richness of Cetaceans along the California coast. Richness is a measure of aggregate species presence as opposed to a single species. A threshold of 0.75 was chosen in order to observe greater detail in species richness patterns, while maintaining coverage for areas of lesser species richness ."}
+# then plot
+
+ggplot() +
+  geom_raster(data = richness_df,
+              aes(x = x, y = y, fill = layer)) +
+  geom_sf(data = state, fill = "snow2") +
+  coord_sf(xlim = c(-126, -114), ylim = c(31, 42)) + # defining coordinates
+  theme_minimal() +
+  labs(x = "longitude", y = "latitude",
+       title = "Species richness of Cetaceans along California's coast",
+       fill = "Species richness") +
+  scale_fill_viridis_c(na.value = "white") 
+
+```
+
+
+
+
+#### **References**
+
+**Kaschner, K., K. Kesner-Reyes, C. Garilao, J. Segschneider, J. Rius-Barile, T. Rees, and R. Froese.** 2019. AquaMaps: Predicted range maps for aquatic species. World wide web electronic publication, www.aquamaps.org, Version 10/2019.
+
+
+
+
+
+

@@ -7,8 +7,6 @@ navbar:
   right:
     - text: "Home"
       href: index.html
-    - text: "Projects"
-      href: projects.html
     - text: "About"
       href: about_me.html
     - text: "Blog"

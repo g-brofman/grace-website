@@ -1,8 +1,9 @@
 ---
-title: "Blog"  # any name you want here
+title: "Featured projects"  # any name you want here
 listing: posts # do this exactly
 
 ---
 
+...
 
-Blog blog blog
+Here are just a few projects I've worked on over the past year. Each post contains a finalized R Markdown document. Code can be made visible within each document by selecting a section labeled 'Code'.
