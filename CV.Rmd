@@ -2,8 +2,12 @@
 title: "CV"
 
 ---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(vitae)
+```
 
 
 ```{r echo = FALSE, message=FALSE, fig.align='center', fig.pos='H', out.width = "800px", out.height = "1100px"}
-knitr::include_graphics("my_resume/gb_resume.pdf")
+knitr::include_graphics("./my_resume/gb_resume.pdf")
 ```
