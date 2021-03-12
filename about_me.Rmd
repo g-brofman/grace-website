@@ -1,7 +1,7 @@
 ---
 title: "About me"
 description: |
-  This and that about me
+  Read on to learn more...
 ---
 
 ```{r setup, include=FALSE}
@@ -10,8 +10,8 @@ knitr::opts_chunk$set(echo = FALSE)
 
 Here are some INCREDIBLE things about me:
 
-- I'm right-handed (and right-footed)
-- (add more later)
-- (add more later)
+- I'm right-handed (and right-footed).
+- By the time I turned 18, I had already completed 11 grades in school.
+- I have never had a PB & J.
 - Email me if YOU have any incredible things about me that you'd like to see posted!
  

@@ -3,31 +3,31 @@
     {
       "path": "about_me.html",
       "title": "About me",
-      "description": "This and that about me",
+      "description": "Read on to learn more...",
       "author": [],
-      "contents": "\nHere are some INCREDIBLE things about me:\nI’m right-handed (and right-footed)\n(add more later)\n(add more later)\nEmail me if YOU have any incredible things about me that you’d like to see posted!\n\n\n\n",
-      "last_modified": "2021-03-11T09:42:37-08:00"
+      "contents": "\nHere are some INCREDIBLE things about me:\nI’m right-handed (and right-footed).\nBy the time I turned 18, I had already completed 11 grades in school.\nI have never had a PB & J.\nEmail me if YOU have any incredible things about me that you’d like to see posted!\n\n\n\n",
+      "last_modified": "2021-03-12T13:12:19-08:00"
     },
     {
       "path": "blog.html",
       "title": "Featured projects",
       "author": [],
       "contents": "\n…\nHere are just a few projects I’ve worked on over the past year. Each post contains a finalized R Markdown document. Code can be made visible within each document by selecting a section labeled ‘Code’.\n\n\n\n",
-      "last_modified": "2021-03-11T09:42:39-08:00"
+      "last_modified": "2021-03-12T13:12:20-08:00"
     },
     {
       "path": "CV.html",
-      "title": "CV",
+      "title": "Resume",
       "author": [],
       "contents": "\n\n\n\n\n\n",
-      "last_modified": "2021-03-11T09:42:42-08:00"
+      "last_modified": "2021-03-12T13:12:24-08:00"
     },
     {
       "path": "index.html",
       "title": "Grace Brofman",
       "author": [],
-      "contents": "\n\n          \n          \n          Grace Brofman\n          \n          \n          Home\n          About\n          Blog\n          Resume\n          CV\n          ☰\n          \n          \n      \n        \n          \n            \n              \n            \n              Grace Brofman\n            \n            \n              \n                \n                    \n                      \n                        LinkedIn\n                      \n                    \n                  \n                                    \n                    \n                      \n                        GitHub\n                      \n                    \n                  \n                                    \n                    \n                      \n                        Email\n                      \n                    \n                  \n                                  \n            \n          \n        \n        \n        \n          \n            Welcome to my website!\n          \n        \n      \n    \n\n    \n      \n        \n          \n            \n              \n            \n              Grace Brofman\n            \n            \n              \n                \n                                    \n                    \n                      LinkedIn\n                    \n                  \n                                    \n                    \n                      GitHub\n                    \n                  \n                                    \n                    \n                      Email\n                    \n                  \n                                  \n              \n            \n            \n              Welcome to my website!\n            \n        \n      \n    \n\n    \n    \n    ",
-      "last_modified": "2021-03-11T09:42:42-08:00"
+      "contents": "\n\n          \n          \n          Grace Brofman\n          \n          \n          Home\n          About\n          Blog\n          Resume\n          ☰\n          \n          \n      \n        \n          \n            \n              \n            \n              Grace Brofman\n            \n            \n              \n                \n                    \n                      \n                        LinkedIn\n                      \n                    \n                  \n                                    \n                    \n                      \n                        GitHub\n                      \n                    \n                  \n                                    \n                    \n                      \n                        Email\n                      \n                    \n                  \n                                  \n            \n          \n        \n        \n        \n          \n            Welcome to my website! I’m a student working toward my Master’s in Environmental Science and Management at the Bren School at UCSB. My specialization is in Water Resources Management, and my main interests lie in water conservation and agricultural efficiency. Please see the About tab for more interesting facts about me, and feel free to contact me via email for any job offers.\n          \n        \n      \n    \n\n    \n      \n        \n          \n            \n              \n            \n              Grace Brofman\n            \n            \n              \n                \n                                    \n                    \n                      LinkedIn\n                    \n                  \n                                    \n                    \n                      GitHub\n                    \n                  \n                                    \n                    \n                      Email\n                    \n                  \n                                  \n              \n            \n            \n              Welcome to my website! I’m a student working toward my Master’s in Environmental Science and Management at the Bren School at UCSB. My specialization is in Water Resources Management, and my main interests lie in water conservation and agricultural efficiency. Please see the About tab for more interesting facts about me, and feel free to contact me via email for any job offers.\n            \n        \n      \n    \n\n    \n    \n    ",
+      "last_modified": "2021-03-12T13:12:25-08:00"
     },
     {
       "path": "projects.html",
@@ -35,7 +35,7 @@
       "description": "Some projects that I've done",
       "author": [],
       "contents": "\nSome projects I’m currently working on include:\nA knitted hat for my mother\nA jello mold incorporating imitation crab, miso, and seaweed\nA pinata of undetermined form, to be embellished with rhinestones\n\n\n\n",
-      "last_modified": "2021-03-11T09:42:44-08:00"
+      "last_modified": "2021-03-12T13:12:27-08:00"
     }
   ],
   "collections": ["posts/posts.json"]

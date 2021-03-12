@@ -14,6 +14,6 @@ site: distill::distill_website
 
 ---
  
-Welcome to my website! 
+Welcome to my website! I'm a student working toward my Master's in Environmental Science and Management at the Bren School at UCSB. My specialization is in Water Resources Management, and my main interests lie in water conservation and agricultural efficiency. Please see the About tab for more interesting facts about me, and feel free to contact me via email for any job offers.
 
 
